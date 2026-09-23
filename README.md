@@ -1,6 +1,4 @@
-# MStroy — TreeStore + AgGrid
-
-Тестовое задание Frontend / Vue.js: хранилище-дерево `TreeStore` и таблица на AgGrid Enterprise с Tree Data.
+# Тестовое задание на позицию Frontend-разработчика (TreeStore + AgGrid)
 
 ## Стек
 
