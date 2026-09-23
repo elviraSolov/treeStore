@@ -1,4 +1,4 @@
-import type { Item, ItemId, TreeStoreEntry } from "treeStore/src/types/item.ts";
+import type { Item, ItemId, TreeStoreEntry } from "@/types/item";
 
 export class TreeStore {
   /** Плоский список всех элементов (в порядке добавления) */
@@ -81,13 +81,12 @@ export class TreeStore {
 
   /** Полностью заменяет данные хранилища */
   setItems(items: Item[]): void {
-    this.items = items;
+    this.items = items.slice();
     this.map = new Map();
     this.rootIds = [];
 
-    // Первый проход: складываем все элементы в map c пустыми childrenIds
-    for (let i = 0; i < items.length; i++) {
-      const item = items[i];
+    for (let i = 0; i < this.items.length; i++) {
+      const item = this.items[i];
       this.map.set(item.id, { item, childrenIds: [] });
     }
 
